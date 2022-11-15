@@ -19,9 +19,13 @@
 </template>
 
 <style>
+  .el-menu {
+    font-weight: bold;
+  }
   .el-menu-item.is-active {
-  background-color: #242C39 !important;
-}
+    background-color: #242C39 !important;
+    font-weight: bolder;
+  }
 </style>
 
 <script>
