@@ -6,11 +6,11 @@ import { getToken } from '@/utils/auth'
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded' // 设置post的默认请求类型，有的可能是fromdata格式，需要单独设置
 
-// https://www.aosenmusic.cn/game_manager/admin
+// http://47.96.110.78/apir/admin
 // create an axios instance
 const service = axios.create({
   // baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
-  baseURL: 'https://www.aosenmusic.cn/game_manager/',
+  baseURL: 'http://47.96.110.78/apir/',
   withCredentials: true, // send cookies when cross-domain requests
   timeout: 5000 // request timeout
 })

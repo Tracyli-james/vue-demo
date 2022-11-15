@@ -38,7 +38,7 @@ module.exports = {
     // proxy: { // string | Object
     //   '/api': {
     //     /* 目标代理服务器地址 */
-    //     target: 'https://www.aosenmusic.cn/game_manager/admin',
+    //     target: 'http://47.96.110.78/apir/admin',
     //     /* 允许跨域 */
     //     changeOrigin: true,
     //     pathRewrite: {

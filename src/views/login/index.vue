@@ -1,13 +1,13 @@
 <template>
   <div class="login-container">
-    <img class="login-bg-img" src="http://pro.ssyl168.com/static/img/bg.9e435714.png" alt="">
+    <img class="login-bg-img" src="http://pro.ssyl168.com/static/img/bg.9e435714.png" alt="" width="100%" height="100%">
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="on" label-position="left">
 
       <div class="title-container">
         <img class="title-image" src="https://static.sy12306.com/upload/stick_card/121574/462c42dbad7de661cff14eb39a91fa4b.png" alt="">
         <img class="title-image1" src="http://pro.ssyl168.com/static/img/text.32556c71.png" alt="">
         <img class="title-image2" src="data:image/png;base64,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" alt="">
-        <!-- <h3 class="title">手游代理商管理中心</h3> -->
+      <!-- <h3 class="title">手游代理商管理中心</h3> -->
       </div>
 
       <el-form-item prop="username">
@@ -149,7 +149,7 @@ export default {
     // GetHomeData API
     getHomePageData() {
       this.loading = true
-      var url = 'https://www.aosenmusic.cn/game_manager/admin/admin/home/index'
+      var url = 'http://47.96.110.78/apir/admin/admin/home/index'
       var fmData = {}
       request({
         url,
@@ -230,6 +230,10 @@ export default {
 /* 修复input 背景不协调 和光标变色 */
 /* Detail see https://github.com/PanJiaChen/vue-element-admin/pull/927 */
 
+:deep().el-input_inner{
+   border:none;
+}
+
 $bg:#283443;
 $light_gray:#fff;
 $cursor: #fff;
@@ -242,6 +246,8 @@ $cursor: #fff;
 
 /* reset element-ui css */
 .login-container {
+
+  display: flex;
   .el-input {
     display: inline-block;
     height: 47px;
@@ -331,6 +337,8 @@ $light_gray:#eee;
     align-items: center;
 
     .title-image{
+      width: 100px;
+      height: 100px;
       margin-bottom: 8px;
     }
     .title-image1{
@@ -365,7 +373,8 @@ $light_gray:#eee;
     height: 54px;
     font-size: 24px;
     font-weight: bold;
-    color: orangered;
+    color: #ff8500;
+    border-color: #ff8500;
     background-color: white;
     border-radius: 20px;
   }

@@ -46,7 +46,7 @@ export default {
     }
     .icon {
       color: #fff;
-      font-size: 24px;
+      font-size: 64px;
       margin-top: 8px;
     }
     .wx-svg-container,
