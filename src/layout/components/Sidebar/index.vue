@@ -18,6 +18,12 @@
   </div>
 </template>
 
+<style>
+  .el-menu-item.is-active {
+  background-color: #242C39 !important;
+}
+</style>
+
 <script>
 import { mapGetters } from 'vuex'
 import Logo from './Logo'
