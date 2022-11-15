@@ -82,7 +82,7 @@
 </template>
 
 <script>
-import { validUsername } from '@/utils/validate'
+// import { validUsername } from '@/utils/validate'
 import SocialSign from './components/SocialSignin'
 import request from '@/utils/request'
 
@@ -90,28 +90,28 @@ export default {
   name: 'Login',
   components: { SocialSign },
   data() {
-    const validateUsername = (rule, value, callback) => {
-      if (!validUsername(value)) {
-        callback(new Error('请输入您的用户名/账号'))
-      } else {
-        callback()
-      }
-    }
-    const validatePassword = (rule, value, callback) => {
-      if (value.length < 6) {
-        callback(new Error('密码不少于6位'))
-      } else {
-        callback()
-      }
-    }
+    // const validateUsername = (rule, value, callback) => {
+    //   if (!validUsername(value)) {
+    //     callback(new Error('请输入您的用户名/账号'))
+    //   } else {
+    //     callback()
+    //   }
+    // }
+    // const validatePassword = (rule, value, callback) => {
+    //   if (value.length < 6) {
+    //     callback(new Error('密码不少于6位'))
+    //   } else {
+    //     callback()
+    //   }
+    // }
     return {
       loginForm: {
         userName: '',
         password: ''
       },
       loginRules: {
-        userName: [{ required: true, trigger: 'blur', validator: validateUsername }],
-        password: [{ required: true, trigger: 'blur', validator: validatePassword }]
+        // userName: [{ required: true, trigger: 'blur', validator: validateUsername }],
+        // password: [{ required: true, trigger: 'blur', validator: validatePassword }]
       },
       passwordType: 'password',
       capsTooltip: false,
@@ -235,6 +235,12 @@ export default {
    border:none;
 }
 
+.el-input__inner::placeholder {
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
 $bg:#283443;
 $light_gray:#fff;
 $cursor: #fff;
@@ -251,7 +257,7 @@ $cursor: #fff;
   .el-input {
     display: inline-block;
     height: 47px;
-    width: 85%;
+    width: 80%;
 
     input {
       background: transparent;
@@ -271,10 +277,13 @@ $cursor: #fff;
   }
 
   .el-form-item {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    // border: 1px solid rgba(255, 255, 255, 0.1);
+    // background: rgba(0, 0, 0, 0.1);
+    // border-radius: 5px;
+    border-bottom: 2px solid white;
     color: #454545;
+    height: 57px;
+    margin-bottom: 33px;
   }
 }
 </style>
@@ -298,7 +307,7 @@ $light_gray:#eee;
 
   .login-form {
     position: relative;
-    width: 520px;
+    width: 565px;
     max-width: 100%;
     padding: 160px 35px 0;
     margin: 0 auto;
@@ -318,16 +327,24 @@ $light_gray:#eee;
   }
 
   .svg-container {
-    padding: 8px 5px 6px 15px;
+    padding: 0px;
     color: $dark_gray;
     vertical-align: middle;
     width: 28px;
     display: inline-block;
-    margin-right: 30px;
+    margin-right: 7px;
   }
 
   .username-img{
-    margin-right: 8px;
+    width: 40px;
+    height: 40px;;
+    margin-right: 4px;
+  }
+
+  .pwd-img{
+    width: 40px;
+    height: 40px;;
+    margin-right: 4px;
   }
 
   .title-container {
@@ -347,37 +364,34 @@ $light_gray:#eee;
       width: 200px;
     }
     .title-image2{
-      margin-bottom: 40px;
+      margin-bottom: 80px;
       width: 300px;
-    }
-
-    .title {
-      font-size: 26px;
-      color: $light_gray;
-      margin: 0px auto 40px auto;
-      text-align: center;
-      font-weight: bold;
     }
   }
 
   .show-pwd {
     position: absolute;
-    right: 10px;
-    top: 17px;
-    font-size: 13px;
+    right: 0px;
+    top: 10px;
+    font-size: 14px;
     color: #ff8500;
     cursor: pointer;
     user-select: none;
+    text-decoration: underline;
   }
 
   .login-btn{
-    height: 54px;
-    font-size: 24px;
+    height: 58px;
+    padding: 14px 0;
+    font-size: 20px;
     font-weight: bold;
     color: #ff8500;
     border-color: #ff8500;
-    background-color: white;
+    background-color: #EFEFEF;
     border-radius: 20px;
+    letter-spacing: 10px;
+    cursor: pointer;
+    transition: all .3s;
   }
 
   .thirdparty-button {
