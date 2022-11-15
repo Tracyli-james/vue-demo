@@ -27,7 +27,7 @@
         />
       </el-form-item>
 
-      <el-tooltip v-model="capsTooltip" content="Caps lock is On" placement="right" manual>
+      <el-tooltip v-model="capsTooltip" content="Top Right 提示文字" placement="right" manual>
         <el-form-item prop="password">
           <span class="svg-container">
             <!-- <svg-icon icon-class="password" /> -->
@@ -47,7 +47,8 @@
             @keyup.enter.native="handleLogin"
           />
           <span class="show-pwd" @click="showPwd">
-            <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
+            <!-- <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" /> -->
+            忘记密码
           </span>
         </el-form-item>
       </el-tooltip>
@@ -247,7 +248,6 @@ $cursor: #fff;
 /* reset element-ui css */
 .login-container {
 
-  display: flex;
   .el-input {
     display: inline-block;
     height: 47px;
@@ -339,15 +339,16 @@ $light_gray:#eee;
     .title-image{
       width: 100px;
       height: 100px;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
+      margin-top: -17px;
     }
     .title-image1{
-      margin-bottom: 5px;
-      width: 240px;
+      margin-bottom: 4px;
+      width: 200px;
     }
     .title-image2{
       margin-bottom: 40px;
-      width: 340px;
+      width: 300px;
     }
 
     .title {
@@ -363,8 +364,8 @@ $light_gray:#eee;
     position: absolute;
     right: 10px;
     top: 17px;
-    font-size: 16px;
-    color: $dark_gray;
+    font-size: 13px;
+    color: #ff8500;
     cursor: pointer;
     user-select: none;
   }
