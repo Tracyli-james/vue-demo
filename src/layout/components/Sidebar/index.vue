@@ -24,7 +24,7 @@
   }
   .el-menu-item.is-active {
     background-color: #242C39 !important;
-    font-weight: bolder;
+    font-weight: bold;
   }
 </style>
 
