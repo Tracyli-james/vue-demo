@@ -1,18 +1,20 @@
 <template>
-  <el-card class="box-card-component" style="margin-left:8px;">
+  <el-card class="box-card-component" style="margin-top:20px;">
     <div slot="header" class="box-card-header">
       推广地址
     </div>
     <div style="margin-bottom: 28px; font-size: 14px;">
-      <div style="color:gray; position: relative;">H5链接：
-        <div style="color:darkseagreen">http://139997.m.ssyl168.com</div>
+      <div style="color:gray; position: relative;">
+        <span>H5链接：</span>
+        <span style="color:darkseagreen;">http://139997.m.ssyl168.com</span>
         <el-button class="btn-copy" type="primary" @click.prevent.stop="guide">
           复制信息
         </el-button>
       </div>
     </div>
     <div style="font-size: 14px;">
-      <div style="color:gray; position: relative;">APP链接：
+      <div class="info-app" style="color:gray; position: relative;">
+        <div class="title">APP链接：</div>
         <div style="color:darkseagreen;">http://page.ssyl168.com/active/gameAndDown?agent_id=139997</div>
         <el-button class="btn-copy" type="primary" @click.prevent.stop="guide">
           复制信息
@@ -64,11 +66,21 @@ export default {
 </style>
 <style lang="scss" scoped>
 .box-card-component {
+  border-radius: 10px;
   .box-card-header {
     padding-top: 20px;
     padding-left: 15px;
     padding-bottom: 12px;
     // border-bottom: 1px dashed #cccccc;
+  }
+
+  .info-app{
+    display: flex;
+    flex-direction: row;
+
+    .title{
+      flex-shrink: 0;
+    }
   }
   .btn-copy{
     position: absolute;
@@ -76,6 +88,8 @@ export default {
     right: -10px;
     padding: 8px 10px;
     font-size: 14px;
+    border: 0;
+    background-color: #67c23a;
   }
 
   .panThumb {

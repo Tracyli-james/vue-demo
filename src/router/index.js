@@ -7,10 +7,10 @@ Vue.use(Router)
 import Layout from '@/layout'
 
 /* Router Modules */
-import componentsRouter from './modules/components'
-import chartsRouter from './modules/charts'
-import tableRouter from './modules/table'
-import nestedRouter from './modules/nested'
+// import componentsRouter from './modules/components'
+// import chartsRouter from './modules/charts'
+// import tableRouter from './modules/table'
+// import nestedRouter from './modules/nested'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -52,11 +52,17 @@ export const constantRoutes = [
   },
   {
     path: '/login',
+    meta: {
+      title: '登录'
+    },
     component: () => import('@/views/login/index'),
     hidden: true
   },
   {
     path: '/auth-redirect',
+    meta: {
+      title: '登录'
+    },
     component: () => import('@/views/login/auth-redirect'),
     hidden: true
   },

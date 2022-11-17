@@ -15,6 +15,16 @@
         {{ tag.title }}
         <span v-if="!isAffix(tag)" class="el-icon-close" @click.prevent.stop="closeSelectedTag(tag)" />
       </router-link>
+
+      <el-dropdown class="tags-label" trigger="click" @command="clickDropItem">
+        <el-button class="tags-label-content" type="primary">
+          标签选项<i class="el-icon-arrow-down el-icon--right" />
+        </el-button>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item :command="1">关闭其他</el-dropdown-item>
+          <el-dropdown-item :command="2">关闭所有</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
     </scroll-pane>
     <ul v-show="visible" :style="{left:left+'px',top:top+'px'}" class="contextmenu">
       <li @click="refreshSelectedTag(selectedTag)">Refresh</li>
@@ -192,6 +202,26 @@ export default {
     },
     handleScroll() {
       this.closeMenu()
+    },
+    clickDropItem(item) {
+      if (item === 1) {
+        // 关闭其他
+        // this.closeOthersTags()
+        // console.log("clickDropItem",this.$route.path)
+        const views = [...this.visitedViews]
+        for (let i = 1; i < views.length; i++) {
+          const tag = views[i]
+          if (tag.fullPath !== this.$route.path) {
+            const index = this.visitedViews.indexOf(tag)
+            if (index !== -1) {
+              this.visitedViews.splice(index, 1)
+            }
+          }
+        }
+      } else if (item === 2) {
+        // 关闭所有
+        this.closeAllTags(this.visitedViews[this.visitedViews.length - 1])
+      }
     }
   }
 }
@@ -199,12 +229,21 @@ export default {
 
 <style lang="scss" scoped>
 .tags-view-container {
-  height: 34px;
+  height: 30px;
   width: 100%;
   background: #fff;
   border-bottom: 1px solid #d8dce5;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 3px 0 rgba(0, 0, 0, .04);
   .tags-view-wrapper {
+     position: relative;
+
+    ::v-deep .el-scrollbar__view {
+      // display: flex;
+      // flex-direction: row;
+      // justify-content: space-between;
+      position: relative;
+    }
+
     .tags-view-item {
       display: inline-block;
       position: relative;
@@ -212,12 +251,13 @@ export default {
       height: 26px;
       line-height: 26px;
       border: 1px solid #d8dce5;
+      border-radius: 3px;
       color: #495060;
       background: #fff;
       padding: 0 8px;
       font-size: 12px;
       margin-left: 5px;
-      margin-top: 4px;
+      margin-top: 2px;
       &:first-of-type {
         margin-left: 15px;
       }
@@ -225,9 +265,9 @@ export default {
         margin-right: 15px;
       }
       &.active {
-        background-color: #42b983;
+        background-color: #5b9df8;
         color: #fff;
-        border-color: #42b983;
+        border-color: #5b9df8;
         &::before {
           content: '';
           background: #fff;
@@ -238,6 +278,23 @@ export default {
           position: relative;
           margin-right: 2px;
         }
+      }
+    }
+
+    .tags-label{
+
+      position: absolute !important;
+      display: block;
+      top: 2px;
+      right: 4px;
+
+      .tags-label-content{
+        height: 26px;
+        line-height: 26px;
+        border-radius: 3px;
+        padding: 0 8px;
+        font-size: 12px;
+        background-color: #5b9df8;
       }
     }
   }

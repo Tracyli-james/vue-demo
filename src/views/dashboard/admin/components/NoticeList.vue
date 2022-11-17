@@ -13,10 +13,10 @@
         <div class="list-left-box">
           <svg-icon icon-class="email" class-name="card-panel-icon" />
           <div class="list-left-title">【{{ item.type }}】</div>
-          <div>{{ item.title }}</div>
-          <div v-if="!item.is_read" style="margin-left: 15px; color: red; font-size: 14px;">未读</div>
+          <div class="list-left-content">{{ item.title }}</div>
+          <div v-if="!item.is_read" style="color: red; font-weight: bold; margin-left: 20px;font-size: 13px;">未读</div>
         </div>
-        <div>{{ item.create_time | parseTime('{y}-{m}-{d} {h}:{i}:{s}') }}</div>
+        <div class="list-left-time">{{ item.create_time | parseTime('{y}-{m}-{d} {h}:{i}:{s}') }}</div>
       </div>
     </div>
     <div v-show="total>0" class="pagination-holder">
@@ -1845,6 +1845,7 @@ export default {
 .pagination-holder{
   display: flex;
   flex-direction: row;
+  justify-content: center;
   /* align-items: center; */
   justify-items: center;
   /* width: 100%; */
@@ -1853,8 +1854,12 @@ export default {
   text-align: right;
   width: 75px;
   line-height: 75px;
+  font-size: 13px;
+  // height: 28px;
+  // line-height: 28px;
 }
 .box-card-component {
+  font-family: PingFang SC,Helvetica Neue,Helvetica,microsoft yahei,arial,STHeiTi,sans-serif;
   .btn-box{
     display: flex;
     flex-direction: row;
@@ -1880,6 +1885,9 @@ export default {
     padding-top: 20px;
     padding-left: 15px;
     padding-bottom: 12px;
+    color: rgb(88, 88, 88);
+    font-size: 20px;
+    font-family: PingFang SC,Helvetica Neue,Helvetica,microsoft yahei,arial,STHeiTi,sans-serif;
   }
   .card-right{
     font-size: 15px;
@@ -1900,6 +1908,21 @@ export default {
 
   .list-left-title{
     color: #3e9eff;
+    font-size: 13px;
+    line-height: 26px;
+  }
+
+  .list-left-content{
+    color: #696969;
+    white-space: nowrap;
+    font-size: 13px;
+    line-height: 26px;
+  }
+
+  .list-left-time{
+    color: #999;
+    font-size: 12px;
+    line-height: 26px;
   }
 
   .card-panel-icon{

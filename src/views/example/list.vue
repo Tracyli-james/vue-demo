@@ -2,7 +2,7 @@
 <!-- eslint-disable no-mixed-spaces-and-tabs -->
 <template>
   <div class="app-container">
-    <div>
+    <el-card class="top-label">
       <div style="display:inline-block;">
         <label class="radio-label" style="padding-left:0;">来源</label>
         <el-select v-model="listQuery.importance" placeholder="请选择" clearable style="width: 200px" class="filter-item">
@@ -41,71 +41,74 @@
       <el-button :loading="downloadLoading" style="margin:0 0 20px 20px;" type="info" icon="el-icon-document" @click="handleClear">
         重置
       </el-button>
-    </div>
-    <el-table v-loading="listLoading" :data="list" border fit highlight-current-row style="width: 100%">
-      <el-table-column width="155px" align="center" label="时间">
-        <template slot-scope="scope">
-          <span>{{ scope.row.createTime | parseTime('{y}-{m}-{d} {h}:{i}:{s}') }}</span>
-        </template>
-      </el-table-column>
+    </el-card>
+    <el-card class="middle">
+      <el-table v-loading="listLoading" :data="list" border fit highlight-current-row style="width: 100%">
+        <el-table-column width="155px" align="center" label="时间">
+          <template slot-scope="scope">
+            <span>{{ scope.row.createTime | parseTime('{y}-{m}-{d} {h}:{i}:{s}') }}</span>
+          </template>
+        </el-table-column>
 
-      <el-table-column width="155px" align="center" label="订单">
-        <template slot-scope="scope">
-          <span>{{ scope.row.orderNo }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column width="110px" align="center" label="用户账号">
-        <template slot-scope="scope">
-          <span>{{ scope.row.userAccount }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column width="230px" align="center" label="游戏">
-        <template slot-scope="scope">
-          <span>{{ scope.row.game }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column width="100px" align="center" label="来源">
-        <template slot-scope="scope">
-          <span>{{ scope.row.source }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column width="90px" align="center" label="订单金额">
-        <template slot-scope="scope">
-          <span>{{ scope.row.payMoney }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column width="90px" align="center" label="实付金额">
-        <template slot-scope="scope">
-          <span>{{ scope.row.payMoney }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column width="150px" align="center" label="支付方式">
-        <template slot-scope="scope">
-          <span>{{ scope.row.payMethod }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column width="100px" align="center" label="当前渠道">
-        <template slot-scope="scope">
-          <span>{{ scope.row.channel || '--' }}</span>
+        <el-table-column width="155px" align="center" label="订单">
+          <template slot-scope="scope">
+            <span>{{ scope.row.orderNo }}</span>
+          </template>
+        </el-table-column>
+        <el-table-column width="110px" align="center" label="用户账号">
+          <template slot-scope="scope">
+            <span>{{ scope.row.userAccount }}</span>
+          </template>
+        </el-table-column>
+        <el-table-column width="230px" align="center" label="游戏">
+          <template slot-scope="scope">
+            <span>{{ scope.row.game }}</span>
+          </template>
+        </el-table-column>
+        <el-table-column width="100px" align="center" label="来源">
+          <template slot-scope="scope">
+            <span>{{ scope.row.source }}</span>
+          </template>
+        </el-table-column>
+        <el-table-column width="90px" align="center" label="订单金额">
+          <template slot-scope="scope">
+            <span>{{ scope.row.payMoney }}</span>
+          </template>
+        </el-table-column>
+        <el-table-column width="90px" align="center" label="实付金额">
+          <template slot-scope="scope">
+            <span>{{ scope.row.payMoney }}</span>
+          </template>
+        </el-table-column>
+        <el-table-column width="150px" align="center" label="支付方式">
+          <template slot-scope="scope">
+            <span>{{ scope.row.payMethod }}</span>
+          </template>
+        </el-table-column>
+        <el-table-column width="100px" align="center" label="当前渠道">
+          <template slot-scope="scope">
+            <span>{{ scope.row.channel || '--' }}</span>
           <!-- <span>--</span> -->
-        </template>
-      </el-table-column>
-      <el-table-column width="110px" align="center" label="当前渠道收益">
-        <template slot-scope="scope">
-          <span>{{ scope.row.channelIncome }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column width="120px" align="center" label="当前渠道净收益">
-        <template slot-scope="scope">
-          <span>{{ scope.row.channelPureIncome }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column width="120px" align="center" label="下级渠道收益">
-        <template slot-scope="scope">
-          <span>{{ scope.row.nexPureIncome }}</span>
-        </template>
-      </el-table-column>
-    </el-table>
+          </template>
+        </el-table-column>
+        <el-table-column width="110px" align="center" label="当前渠道收益">
+          <template slot-scope="scope">
+            <span>{{ scope.row.channelIncome }}</span>
+          </template>
+        </el-table-column>
+        <el-table-column width="120px" align="center" label="当前渠道净收益">
+          <template slot-scope="scope">
+            <span>{{ scope.row.channelPureIncome }}</span>
+          </template>
+        </el-table-column>
+        <el-table-column width="120px" align="center" label="下级渠道收益">
+          <template slot-scope="scope">
+            <span>{{ scope.row.nexPureIncome }}</span>
+          </template>
+        </el-table-column>
+      </el-table>
+    </el-card>
+
     <div v-show="total>0" class="pagination-holder">
       <div class="pagination-total">共{{ total }}条</div>
       <pagination v-show="total>0" :total="total" :page.sync="listQuery.page" :limit.sync="listQuery.pageSize" @pagination="getList" />
@@ -498,6 +501,17 @@ export default {
 </script>
 
 <style scoped>
+
+.app-container{
+  padding: 30px;
+}
+.top-label{
+  margin-top: 10px;
+  /* padding: 20px; */
+}
+.middle{
+  margin-top: 10px;
+}
 .pagination-holder{
   display: flex;
   flex-direction: row;

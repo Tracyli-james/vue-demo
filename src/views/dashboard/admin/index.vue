@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard-editor-container">
-    <el-row :gutter="20">
+    <!-- <el-row :gutter="20">
       <el-col :span="17" style="">
         <DataPannel style="margin-bottom:0px;" :indexdata="indexData" @handleSetLineChartData="handleSetLineChartData" />
         <NoticeList style="margin-bottom:20px;" />
@@ -14,7 +14,23 @@
         <ServicePanel style="margin-bottom:20px;" />
         <DownLoad style="margin-bottom:10px;" />
       </el-col>
-    </el-row>
+    </el-row> -->
+
+    <div class="content">
+      <div class="left">
+        <DataPannel style="margin-bottom:0px;" :indexdata="indexData" @handleSetLineChartData="handleSetLineChartData" />
+        <NoticeList style="margin-bottom:20px;" />
+        <DataBoard />
+      </div>
+      <div class="right">
+        <TuiGuang style="margin-bottom:20px;" />
+        <YuMoney style="margin-bottom:20px;" />
+        <CheckUser style="margin-bottom:20px;" />
+        <GameData style="margin-bottom:20px;" />
+        <ServicePanel style="margin-bottom:20px;" />
+        <DownLoad style="margin-bottom:10px;" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -113,7 +129,7 @@ export default {
 
 <style lang="scss" scoped>
 .dashboard-editor-container {
-  padding: 32px;
+  padding: 20px;
   background-color: rgb(240, 242, 245);
   position: relative;
 
@@ -121,6 +137,20 @@ export default {
     background: #fff;
     padding: 16px 16px 0;
     margin-bottom: 32px;
+  }
+
+  .content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .left{
+      width: 67%;
+    }
+
+    .right{
+      width: 30%;
+    }
   }
 }
 

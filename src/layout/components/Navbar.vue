@@ -2,8 +2,8 @@
   <div class="navbar">
     <hamburger id="hamburger-container" :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
 
-    <breadcrumb id="breadcrumb-container" class="breadcrumb-container" />
-    <img class="title-img" src="http://pro.ssyl168.com/static/img/sydl.beb80113.png" alt="">
+    <!-- <breadcrumb id="breadcrumb-container" class="breadcrumb-container" /> -->
+    <div class="title-img" />
 
     <div class="right-menu">
       <template v-if="device!=='mobile'">
@@ -22,8 +22,16 @@
       <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
         <div class="avatar-wrapper">
           <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
-          <i class="el-icon-caret-bottom" />
+
+          <div class="user-info">
+            <div class="user-text">
+              houtaiyanshi
+              <i class="el-icon-caret-bottom" />
+            </div>
+            <div class="version" style="margin-left: 10px;">当前版本：v2.1.1</div>
+          </div>
         </div>
+
         <el-dropdown-menu slot="dropdown">
           <router-link to="/profile/index">
             <el-dropdown-item>个人信息</el-dropdown-item>
@@ -85,11 +93,14 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
-  height: 50px;
+  height: 70px;
   overflow: hidden;
   position: relative;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
   .hamburger-container {
     line-height: 46px;
@@ -98,6 +109,9 @@ export default {
     cursor: pointer;
     transition: background .3s;
     -webkit-tap-highlight-color:transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
       background: rgba(0, 0, 0, .025)
@@ -109,9 +123,15 @@ export default {
   }
 
   .title-img{
-    height: 34px;
-    margin-top: 10px;
-    margin-left: 28%;
+    // height: 34px;
+    // height: 70px;
+    // margin-top: 10px;
+    // margin-left: 28%;
+    width: 250px;
+    height: 70px;
+    background: url(http://pro.ssyl168.com/static/img/sydl.beb80113.png) 50% no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
   }
 
   .errLog-container {
@@ -148,24 +168,55 @@ export default {
 
     .avatar-container {
       margin-right: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
       .avatar-wrapper {
-        margin-top: 5px;
+        // margin-top: 5px;
         position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
 
         .user-avatar {
           cursor: pointer;
           width: 40px;
           height: 40px;
-          border-radius: 10px;
+          border-radius: 50%;
+
+        }
+      }
+
+      .user-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        color: #565656;
+        font-size: 14px;
+        cursor: pointer;
+        .user-text{
+          cursor: pointer;
+           margin-left: 10px;
+          //  align-items: center;
+          // color: #565656;
+          // font-size: 14px;
+          line-height: 14px;
+
+          .el-icon-caret-bottom {
+            cursor: pointer;
+            // position: absolute;
+            right: -20px;
+            top: 25px;
+            font-size: 12px;
+          }
         }
 
-        .el-icon-caret-bottom {
+        .version{
           cursor: pointer;
-          position: absolute;
-          right: -20px;
-          top: 25px;
-          font-size: 12px;
+          margin-top: 5px;
+          line-height: 14px;
         }
       }
     }

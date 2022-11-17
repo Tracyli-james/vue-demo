@@ -1,10 +1,10 @@
 <template>
-  <el-card class="box-card-component" style="margin-left:8px;">
+  <el-card class="box-card-component">
     <div slot="header" class="box-card-header">
       用户信息快捷查看
     </div>
     <div>
-      <el-input v-model="title" class="edit-input" placeholder="请输入用户账号" size="small" />
+      <el-input v-model="title" class="edit-input" placeholder="请输入用户账号" size="small" style="text-align:center" />
     </div>
     <div style="margin-bottom: 8px;">
       <div class="card-right" style="color:gray;">
@@ -76,6 +76,12 @@ export default {
 </style>
 <style lang="scss" scoped>
 .box-card-component {
+  border-radius: 10px;
+
+   ::v-deep .el-input__inner {
+    text-align: center;
+  }
+
   .box-card-header {
     padding-top: 20px;
     padding-left: 15px;

@@ -1,5 +1,5 @@
 <template>
-  <el-card class="box-card-component" style="margin-left:8px;">
+  <el-card class="box-card-component">
     <div class="card-panel">
       <div class="right-panel-service">
         <img class="right-panel-service-img" src="https://static.sy12306.com/upload/qrcode/28a3cb6ad1f5a398809a72ea3c21c5bf.png" alt="">
@@ -69,7 +69,10 @@ export default {
 </style>
 <style lang="scss" scoped>
 .box-card-component {
+  border-radius: 10px;
   background-color: #fdb15f;
+  box-shadow: 0 5px 0 #e79b36;
+  border: none;
 
   .right-panel-service{
     display: flex;
