@@ -86,6 +86,7 @@ export default {
   }
 
   .card-panel {
+    width: 295px;
     height: 150px;
     cursor: pointer;
     font-size: 12px;
