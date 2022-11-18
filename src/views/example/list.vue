@@ -101,6 +101,11 @@
             <span>{{ scope.row.channelPureIncome }}</span>
           </template>
         </el-table-column>
+        <el-table-column width="120px" align="center" label="下级渠道">
+          <template slot-scope="scope">
+            <span>{{ scope.row.nexIncome }}</span>
+          </template>
+        </el-table-column>
         <el-table-column width="120px" align="center" label="下级渠道收益">
           <template slot-scope="scope">
             <span>{{ scope.row.nexPureIncome }}</span>

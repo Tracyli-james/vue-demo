@@ -85,7 +85,7 @@ export const constantRoutes = [
         path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
-        meta: { title: '系统首页', icon: 'dashboard', affix: true }
+        meta: { title: '系统首页', icon: 'iconfont icon-icon_home', affix: true }
       }
     ]
   },
@@ -143,7 +143,7 @@ export const asyncRoutes = [
     name: 'Permission',
     meta: {
       title: '游戏管理',
-      icon: 'lock',
+      icon: 'iconfont icon-game',
       roles: ['admin', 'editor'] // you can set roles in root nav
     },
     children: [
@@ -221,7 +221,7 @@ export const asyncRoutes = [
     name: 'Example',
     meta: {
       title: '用户管理',
-      icon: 'el-icon-s-help'
+      icon: 'iconfont icon-shujuzhongxin'
     },
     children: [
       {
@@ -278,7 +278,7 @@ export const asyncRoutes = [
     name: 'ErrorPages',
     meta: {
       title: '渠道管理',
-      icon: '404'
+      icon: 'iconfont icon-tuiguang'
     },
     children: [
       {
@@ -316,7 +316,7 @@ export const asyncRoutes = [
     name: 'Excel',
     meta: {
       title: '渠道收益管理',
-      icon: 'excel'
+      icon: 'iconfont icon-caiwuzhongxin'
     },
     children: [
       {
@@ -366,7 +366,7 @@ export const asyncRoutes = [
     redirect: '/zip/download',
     alwaysShow: true,
     name: 'Zip',
-    meta: { title: '货币管理', icon: 'zip' },
+    meta: { title: '货币管理', icon: 'iconfont icon-caiwuzhongxin' },
     children: [
       {
         path: 'download1',
@@ -388,7 +388,7 @@ export const asyncRoutes = [
     children: [
       {
         path: '',
-        meta: { title: '账户管理', icon: 'link' }
+        meta: { title: '账户管理', icon: 'iconfont icon-zhanghaoguanli' }
       }
     ]
   },
@@ -398,7 +398,7 @@ export const asyncRoutes = [
     redirect: '/zip/download',
     alwaysShow: true,
     name: 'Zip',
-    meta: { title: '资源管理', icon: 'zip' },
+    meta: { title: '资源管理', icon: 'iconfont el-icon-lx-copy' },
     children: [
       {
         path: 'download0',

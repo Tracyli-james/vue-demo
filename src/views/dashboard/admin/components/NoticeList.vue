@@ -11,7 +11,6 @@
     <div style="margin-bottom: 8px;">
       <div v-for="(item,index) of noticeList" :key="index" class="card-right" style="color:gray;">
         <div class="list-left-box">
-          <svg-icon icon-class="email" class-name="card-panel-icon" />
           <div class="list-left-title">【{{ item.type }}】</div>
           <div class="list-left-content">{{ item.title }}</div>
           <div v-if="!item.is_read" style="color: red; font-weight: bold; margin-left: 20px;font-size: 13px;">未读</div>
@@ -1904,6 +1903,17 @@ export default {
   .list-left-box{
     display: flex;
     align-items: center;
+  }
+
+  .list-left-box::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 23px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #dedede;
   }
 
   .list-left-title{

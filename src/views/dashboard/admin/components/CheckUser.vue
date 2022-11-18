@@ -3,9 +3,7 @@
     <div slot="header" class="box-card-header">
       用户信息快捷查看
     </div>
-    <div>
-      <el-input v-model="title" class="edit-input" placeholder="请输入用户账号" size="small" style="text-align:center" />
-    </div>
+    <el-input v-model="input" type="text" maxlength="20" placeholder="请输入用户账号" size="small" />
     <div style="margin-bottom: 8px;">
       <div class="card-right" style="color:gray;">
         <el-button class="btn-copy" type="info" @click.prevent.stop="guide">
@@ -54,7 +52,7 @@ export default {
       ],
       key: 1, // table key
       formTheadOptions: ['apple', 'banana', 'orange'],
-      title: ''
+      input: ''
     }
   },
   computed: {
@@ -80,6 +78,10 @@ export default {
 
    ::v-deep .el-input__inner {
     text-align: center;
+
+    &::placeholder {
+      color: #c1c4cb;
+    }
   }
 
   .box-card-header {

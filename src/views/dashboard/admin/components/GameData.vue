@@ -8,6 +8,10 @@
         <div class="card-panel-text-mid">昨日新增：10</div>
         <div class="card-panel-text-bot">今日新增：22</div>
       </div>
+      <div class="hot-card-item3">
+        <div>22</div>
+        <div style="margin-top:5px">总游戏</div>
+      </div>
     </div>
   </el-card>
 </template>
@@ -134,6 +138,16 @@ export default {
       text-align: center;
       padding: 14px 10px;
       color: #fff;
+    }
+
+    .hot-card-item3 {
+      margin-left: 20px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .card-panel-text-top{

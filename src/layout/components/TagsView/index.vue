@@ -12,8 +12,9 @@
         @click.middle.native="!isAffix(tag)?closeSelectedTag(tag):''"
         @contextmenu.prevent.native="openMenu(tag,$event)"
       >
-        {{ tag.title }}
-        <span v-if="!isAffix(tag)" class="el-icon-close" @click.prevent.stop="closeSelectedTag(tag)" />
+        <!-- {{ tag.title }} -->
+        <span class="tags-content">{{ tag.title }}</span>
+        <span class="el-icon-close tags-icon" @click.prevent.stop="closeSelectedTag(tag)" />
       </router-link>
 
       <el-dropdown class="tags-label" trigger="click" @command="clickDropItem">
@@ -268,16 +269,30 @@ export default {
         background-color: #5b9df8;
         color: #fff;
         border-color: #5b9df8;
-        &::before {
-          content: '';
-          background: #fff;
-          display: inline-block;
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          position: relative;
-          margin-right: 2px;
-        }
+        // &::before {
+        //   content: '';
+        //   background: #fff;
+        //   display: inline-block;
+        //   width: 8px;
+        //   height: 8px;
+        //   border-radius: 50%;
+        //   position: relative;
+        //   margin-right: 2px;
+        // }
+      }
+
+      .tags-content{
+        height: 26px;
+        line-height: 26px;
+        position: relative;
+        top: -2px;
+      }
+
+      .tags-icon{
+        margin-left: 2px;
+        // line-height: 26px;
+        // // align-self: center;
+        font-size: 20px;
       }
     }
 
