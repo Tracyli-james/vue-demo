@@ -319,8 +319,9 @@ $light_gray:#eee;
 
   .login-form {
     position: relative;
-    width: 565px;
-    max-width: 100%;
+    // width: 565px;
+    width: 55%;
+    // max-width: 100%;
     padding: 0 35px 0;
     margin: 0 auto;
     overflow: visible;
