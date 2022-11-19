@@ -1,9 +1,9 @@
 <template>
   <el-card class="box-card-component" style="margin-top:20px;">
-    <div slot="header" class="box-card-header">
+    <div class="box-card-header">
       推广地址
     </div>
-    <div style="margin-bottom: 28px; font-size: 14px;">
+    <div style="margin-top: 20px;margin-bottom: 28px; font-size: 14px;">
       <div style="color:gray; position: relative;">
         <span>H5链接：</span>
         <span style="color:darkseagreen;">http://139997.m.ssyl168.com</span>
@@ -68,10 +68,11 @@ export default {
 .box-card-component {
   border-radius: 10px;
   .box-card-header {
-    padding-top: 20px;
-    padding-left: 15px;
+    // padding-top: 20px;
+    // padding-left: 15px;
     padding-bottom: 12px;
     // border-bottom: 1px dashed #cccccc;
+    border-bottom: 1px dashed #ccc;
   }
 
   .info-app{

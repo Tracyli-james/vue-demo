@@ -1,5 +1,5 @@
 module.exports = {
-  title: '手游代理管理中心',
+  // title: '手游代理管理中心',
 
   /**
    * @type {boolean} true | false

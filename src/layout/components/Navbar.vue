@@ -129,7 +129,7 @@ export default {
     // margin-left: 28%;
     width: 250px;
     height: 70px;
-    background: url(http://pro.ssyl168.com/static/img/sydl.beb80113.png) 50% no-repeat;
+    background: url(http://pro.ssyl168.com/static/img/img.146655c9.jpg) 50% no-repeat;
     background-size: 100%;
     margin: 0 auto;
   }

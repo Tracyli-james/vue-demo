@@ -18,7 +18,11 @@ export default {
 
     if (icon) {
       if (icon.includes('iconfont')) {
-        vnodes.push(<em class={icon} style={'margin-right:16px;font-size:18px;'}></em>)
+        let style = 'margin-right:16px;font-size:17px;'
+        if (icon.includes('icon-game')) {
+          style += 'font-size:14px'
+        }
+        vnodes.push(<em class={icon} style={style}></em>)
       } else if (icon.includes('el-icon')) {
         vnodes.push(<i class={[icon, 'sub-el-icon']} />)
       } else {

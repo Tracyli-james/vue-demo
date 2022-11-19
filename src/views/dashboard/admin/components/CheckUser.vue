@@ -1,9 +1,9 @@
 <template>
   <el-card class="box-card-component">
-    <div slot="header" class="box-card-header">
+    <div class="box-card-header">
       用户信息快捷查看
     </div>
-    <el-input v-model="input" type="text" maxlength="20" placeholder="请输入用户账号" size="small" />
+    <el-input v-model="input" class="box-card-input" type="text" maxlength="20" placeholder="请输入用户账号" size="small" />
     <div style="margin-bottom: 8px;">
       <div class="card-right" style="color:gray;">
         <el-button class="btn-copy" type="info" @click.prevent.stop="guide">
@@ -85,10 +85,14 @@ export default {
   }
 
   .box-card-header {
-    padding-top: 20px;
-    padding-left: 15px;
+    // padding-top: 20px;
+    // padding-left: 15px;
     padding-bottom: 12px;
-    // border-bottom: 1px dashed #cccccc;
+    border-bottom: 1px dashed #cccccc;
+  }
+
+  .box-card-input{
+    margin-top: 20px;
   }
   .card-right{
     font-size: 15px;

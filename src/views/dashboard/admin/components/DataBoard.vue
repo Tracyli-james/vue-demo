@@ -2,7 +2,7 @@
 <!-- eslint-disable vue/valid-v-bind -->
 <template>
   <el-card class="box-card-component" style="margin-left:0px;">
-    <div slot="header" class="box-card-header">
+    <div class="box-card-header">
       数据报表
     </div>
     <div class="btn-box">
@@ -122,15 +122,17 @@ export default {
 <style lang="scss" scoped>
 .box-card-component {
   .box-card-header {
-    padding-top: 20px;
-    padding-left: 15px;
+    // padding-top: 20px;
+    // padding-left: 15px;
     padding-bottom: 12px;
+    border-bottom: 1px dashed #ccc;
   }
   .btn-box{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: start;
+    margin-top: 20px;
     margin-bottom: 8px;
   }
   .btn-panel-select{

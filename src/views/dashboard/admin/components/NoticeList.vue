@@ -1,6 +1,6 @@
 <template>
   <el-card class="box-card-component" style="margin-left:0px;">
-    <div slot="header" class="box-card-header">
+    <div class="box-card-header">
       平台公告
     </div>
     <div class="btn-box">
@@ -1864,6 +1864,7 @@ export default {
     flex-direction: row;
     align-items: center;
     justify-content: start;
+    margin-top: 20px;
     margin-bottom: 8px;
   }
   .btn-panel-select{
@@ -1881,9 +1882,10 @@ export default {
     border-radius: 2px;
   }
   .box-card-header {
-    padding-top: 20px;
-    padding-left: 15px;
+    padding-top: 15px;
+    // padding-left: 15px;
     padding-bottom: 12px;
+    border-bottom: 1px dashed #ccc;
     color: rgb(88, 88, 88);
     font-size: 20px;
     font-family: PingFang SC,Helvetica Neue,Helvetica,microsoft yahei,arial,STHeiTi,sans-serif;
