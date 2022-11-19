@@ -3,43 +3,43 @@
 <template>
   <div class="app-container">
     <el-card class="top-label">
-      <div style="display:inline-block;">
+      <div class="item" style="display:inline-block;">
         <label class="radio-label" style="padding-left:0;">来源</label>
         <el-select v-model="listQuery.importance" placeholder="请选择" clearable style="width: 180px" class="filter-item">
           <el-option v-for="item in importanceOptions" :key="item" :label="item" :value="item" />
         </el-select>
       </div>
-      <div style="display:inline-block;">
+      <div class="item" style="display:inline-block;">
         <label class="radio-label" style="padding-left:0; margin-left: 10px;">渠道账号</label>
         <el-select v-model="listQuery.qudao" placeholder="请选择" clearable style="width: 180px" class="filter-item">
           <el-option v-for="item in qudaolist" :key="item" :label="item" :value="item" />
         </el-select>
       </div>
-      <div style="display:inline-block;">
+      <div class="item" style="display:inline-block;">
         <label class="radio-label" style="padding-left:0;margin-left: 10px;">支付方式</label>
         <!-- <el-input v-model="temp.zhifu" placeholder="" style="width:245px;" prefix-icon="el-icon-document" /> -->
         <el-select v-model="listQuery.zhifu" placeholder="请选择" clearable style="width: 200px" class="filter-item">
           <el-option v-for="item in zhifulist" :key="item" :label="item" :value="item" />
         </el-select>
       </div>
-      <div style="display:inline-block;">
+      <div class="item" style="display:inline-block;">
         <label class="radio-label" style="padding-left:0;margin-left: 10px;">订单号</label>
         <el-input v-model="temp.dingdan" placeholder="请输入渠道ID" style="width:180px;" />
       </div>
-      <div style="display:inline-block; margin-top: 12px;">
+      <div class="item" style="display:inline-block; margin-top: 12px;">
         <label class="radio-label" style="padding-left:0;">用户账号</label>
         <el-input v-model="temp.zhanghu" placeholder="请输入用户账号" style="width:180px;" />
       </div>
-      <div style="display:inline-block;">
+      <div class="item" style="display:inline-block;">
         <label class="radio-label" style="padding-left:0;padding-top: 20px;">时间</label>
-        <el-date-picker v-model="temp.timestamp" type="datetime" placeholder="请选择开始时间" />
+        <el-date-picker v-model="temp.timestamp" type="date" placeholder="请选择开始时间" />
         <span>  -  </span>
-        <el-date-picker v-model="temp.timestampend" type="datetime" placeholder="请选择结束时间" />
+        <el-date-picker v-model="temp.timestampend" type="date" placeholder="请选择结束时间" />
       </div>
-      <el-button :loading="downloadLoading" style="margin:0 0 20px 30px;" type="primary" @click="handleSearch">
+      <el-button :loading="downloadLoading" style="margin:0 0 20px 30px;" type="primary" size="small" @click="handleSearch">
         搜索
       </el-button>
-      <el-button :loading="downloadLoading" style="margin:0 0 20px 10px;" type="info" @click="handleClear">
+      <el-button :loading="downloadLoading" style="margin:0 0 20px 10px;" type="info" size="small" @click="handleClear">
         重置
       </el-button>
     </el-card>
@@ -506,10 +506,24 @@ export default {
 }
 </script>
 
-<style scoped>
+<style  lang="scss" scoped>
 
 .app-container{
   padding: 30px;
+
+  ::v-deep  {
+    .el-input__inner{
+      height: 32px;
+    }
+    // .el-card__body{
+    //   padding: 10px;
+    // }
+
+    th{
+      background-color: #f3f6f9;
+    }
+
+  }
 }
 .top-label{
   margin-top: 10px;
@@ -535,8 +549,13 @@ export default {
   line-height: 75px;
 }
 
+.item{
+  margin-right: 20px;
+  margin-bottom: 18px;
+}
+
 .radio-label {
-  margin-left: 20px;
+  // margin-left: 20px;
   font-size: 11px;
   color: #606266;
   line-height: 40px;
@@ -549,24 +568,6 @@ export default {
   position: absolute;
   right: 15px;
   top: 10px;
-}
-
-</style>
-
-<style scoped>
-
-.el-button--primary {
-  font-size: 10px;
-  font-weight: bold;
-  width: 56px;
-  height: 32px;
-}
-
-.el-button--info {
-  font-size: 10px;
-  font-weight: bold;
-  width: 56px;
-  height: 32px;
 }
 
 </style>
