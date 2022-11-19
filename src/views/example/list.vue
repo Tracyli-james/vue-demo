@@ -5,13 +5,13 @@
     <el-card class="top-label">
       <div style="display:inline-block;">
         <label class="radio-label" style="padding-left:0;">来源</label>
-        <el-select v-model="listQuery.importance" placeholder="请选择" clearable style="width: 200px" class="filter-item">
+        <el-select v-model="listQuery.importance" placeholder="请选择" clearable style="width: 180px" class="filter-item">
           <el-option v-for="item in importanceOptions" :key="item" :label="item" :value="item" />
         </el-select>
       </div>
       <div style="display:inline-block;">
         <label class="radio-label" style="padding-left:0; margin-left: 10px;">渠道账号</label>
-        <el-select v-model="listQuery.qudao" placeholder="请选择" clearable style="width: 200px" class="filter-item">
+        <el-select v-model="listQuery.qudao" placeholder="请选择" clearable style="width: 180px" class="filter-item">
           <el-option v-for="item in qudaolist" :key="item" :label="item" :value="item" />
         </el-select>
       </div>
@@ -24,21 +24,22 @@
       </div>
       <div style="display:inline-block;">
         <label class="radio-label" style="padding-left:0;margin-left: 10px;">订单号</label>
-        <el-input v-model="temp.dingdan" placeholder="" style="width:245px;" prefix-icon="el-icon-document" />
+        <el-input v-model="temp.dingdan" placeholder="请输入渠道ID" style="width:180px;" />
       </div>
       <div style="display:inline-block; margin-top: 12px;">
         <label class="radio-label" style="padding-left:0;">用户账号</label>
-        <el-input v-model="temp.zhanghu" placeholder="请输入用户账号" style="width:245px;" prefix-icon="el-icon-document" />
+        <el-input v-model="temp.zhanghu" placeholder="请输入用户账号" style="width:180px;" />
       </div>
       <div style="display:inline-block;">
-        <label class="radio-label" style="padding-left:0;margin-left: 10px;">时间</label>
+        <label class="radio-label" style="padding-left:0;padding-top: 20px;">时间</label>
         <el-date-picker v-model="temp.timestamp" type="datetime" placeholder="请选择开始时间" />
+        <span>  -  </span>
         <el-date-picker v-model="temp.timestampend" type="datetime" placeholder="请选择结束时间" />
       </div>
-      <el-button :loading="downloadLoading" style="margin:0 0 20px 20px;" type="primary" icon="el-icon-document" @click="handleSearch">
+      <el-button :loading="downloadLoading" style="margin:0 0 20px 30px;" type="primary" @click="handleSearch">
         搜索
       </el-button>
-      <el-button :loading="downloadLoading" style="margin:0 0 20px 20px;" type="info" icon="el-icon-document" @click="handleClear">
+      <el-button :loading="downloadLoading" style="margin:0 0 20px 10px;" type="info" @click="handleClear">
         重置
       </el-button>
     </el-card>
@@ -103,7 +104,7 @@
         </el-table-column>
         <el-table-column width="120px" align="center" label="下级渠道">
           <template slot-scope="scope">
-            <span>{{ scope.row.nexIncome }}</span>
+            <span>{{ scope.row.nextChannel }}</span>
           </template>
         </el-table-column>
         <el-table-column width="120px" align="center" label="下级渠道收益">
@@ -515,13 +516,17 @@ export default {
   /* padding: 20px; */
 }
 .middle{
+  border: none;
   margin-top: 10px;
 }
 .pagination-holder{
+  background-color: white;
   display: flex;
   flex-direction: row;
   /* align-items: center; */
   justify-items: center;
+  text-align: right;
+  padding-left: 100px;
   /* width: 100%; */
 }
 .pagination-total{
@@ -529,8 +534,10 @@ export default {
   width: 440px;
   line-height: 75px;
 }
+
 .radio-label {
-  font-size: 14px;
+  margin-left: 20px;
+  font-size: 11px;
   color: #606266;
   line-height: 40px;
   padding: 0 12px 0 30px;
@@ -543,4 +550,23 @@ export default {
   right: 15px;
   top: 10px;
 }
+
+</style>
+
+<style scoped>
+
+.el-button--primary {
+  font-size: 10px;
+  font-weight: bold;
+  width: 56px;
+  height: 32px;
+}
+
+.el-button--info {
+  font-size: 10px;
+  font-weight: bold;
+  width: 56px;
+  height: 32px;
+}
+
 </style>
