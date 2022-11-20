@@ -21,7 +21,8 @@
 
       <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
         <div class="avatar-wrapper">
-          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
+          <!-- <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar"> -->
+          <img src="http://pro.ssyl168.com/static/img/img.146655c9.jpg" class="user-avatar">
 
           <div class="user-info">
             <div class="user-text">
@@ -129,7 +130,7 @@ export default {
     // margin-left: 28%;
     width: 250px;
     height: 70px;
-    background: url(http://pro.ssyl168.com/static/img/img.146655c9.jpg) 50% no-repeat;
+    background: url(http://pro.ssyl168.com/static/img/sydl.beb80113.png) 50% no-repeat;
     background-size: 100%;
     margin: 0 auto;
   }
