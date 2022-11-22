@@ -26,7 +26,7 @@
 
           <div class="user-info">
             <div class="user-text">
-              houtaiyanshi
+              盛世手游
               <i class="el-icon-caret-bottom" />
             </div>
             <div class="version" style="margin-left: 10px;">当前版本：v2.1.1</div>
